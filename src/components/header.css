@@ -1,0 +1,21 @@
+.header{
+  padding: 20px;
+}
+
+.header__search{
+  width: 30vw;
+  padding: 10px 10px 10px 50px;
+  background: url(https://cdn0.iconfinder.com/data/icons/slim-square-icons-basics/100/basics-19-32.png) no-repeat 0px 7.5px;
+  background-size: 24px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 4px;
+  outline: none;
+  transition: 0.2s;
+  box-shadow:  2.5px 1.5px 0 rgb(191, 191, 191);
+  border-bottom: 3px solid rgb(191, 191, 191);
+  
+}
+.header__search:focus{
+  border-bottom: 3px solid rgb(137, 179, 204);
+}
