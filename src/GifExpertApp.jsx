@@ -28,7 +28,7 @@ const GifExpertApp = () => {
     <div className="app">
       <div className="app__container">
         <Header setValueSearch={setValueSearch}/>
-        <GifResults valueSearch={valueSearch}/>
+        <GifResults valueSearch={valueSearch} results={results}/>
         <Footer></Footer>
       </div>
     </div>
