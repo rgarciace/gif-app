@@ -12,7 +12,7 @@ const GifExpertApp = () => {
         <GifResults valueSearch={valueSearch}/>
         <footer className="footer">
           Aquí pie de página
-        </footer>
+        </footer> 
       </div>
     </div>
   );
