@@ -7,3 +7,10 @@ html, body, *{
 body{
   background: #eeeeee;
 }
+footer{
+  margin-top: 1rem;
+  text-align: center;
+  padding: 1rem;
+  background-color: #000000;
+  color: #ffffff;
+}

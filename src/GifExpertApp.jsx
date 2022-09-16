@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Footer from "./components/Footer";
 import GifResults from "./components/GifResults";
 import Header from './components/Header'
 import "./giftExpertApp.css";
@@ -10,9 +11,7 @@ const GifExpertApp = () => {
       <div className="app__container">
         <Header setValueSearch={setValueSearch}/>
         <GifResults valueSearch={valueSearch}/>
-        <footer className="footer">
-          Aquí pie de página
-        </footer> 
+        <Footer></Footer>
       </div>
     </div>
   );
