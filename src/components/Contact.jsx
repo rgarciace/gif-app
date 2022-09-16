@@ -8,12 +8,12 @@ const Contact = ({ name, fb, git}) => {
       {name}
       <ul>
         <li>
-          <a href={fb}>
+          <a href={fb} target="_blank">
             <FaFacebook></FaFacebook>
           </a>
         </li>
         <li>
-          <a href={git}>
+          <a href={git} target="_blank">
             <FaGithub></FaGithub>
           </a>
         </li>
