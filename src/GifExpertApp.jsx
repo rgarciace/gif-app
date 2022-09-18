@@ -11,8 +11,10 @@ const limit = 20;
 const GifExpertApp = () => {
   const [valueSearch, setValueSearch] = useState("");
   const [results, setResults] = useState([]);
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
+    setLoading(true)
     getGif();
   }, [valueSearch]);
 
@@ -21,14 +23,15 @@ const GifExpertApp = () => {
       `${url}?api_key=${api}&q=${valueSearch}&limit=${limit}`
     );
     const { data } = await response.json();
-    setResults(data)
+    setResults(data);
+    setLoading(false)
   };
 
   return (
     <div className="app">
       <div className="app__container">
         <Header setValueSearch={setValueSearch}/>
-        <GifResults valueSearch={valueSearch} results={results}/>
+        <GifResults results={results} loading={loading}/>
         <Footer></Footer>
       </div>
     </div>

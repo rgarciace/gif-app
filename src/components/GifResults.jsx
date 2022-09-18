@@ -1,22 +1,20 @@
 import './gifResults.css'
 
-const GifResults = ({ results }) => {
+const GifResults = ({ results, loading }) => {
   return (
     <main className="main">
-      {results.length<=0 ? (
+      {loading ? (
         <>
-          <p className="main__text">No haz realizado ninguna búsqueda</p>
+          <p className="main__text">Cargando...</p>
         </>
       ) : (
         <>
           {results.map((item) => (
-            // <div key={item.id}>
               <iframe
                 key={item.id}
                 className="main__gif"
                 src={item.embed_url}
               ></iframe>
-            // </div>
           ))}
         </>
       )}
