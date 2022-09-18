@@ -1,14 +1,20 @@
 .containerHeader {
   background-color: white;
   box-shadow: 0 3px 15px 5px rgba(0, 0, 0, 0.08);
+  position: sticky;
+  top: 0;
 }
 .header {
   max-width: 1440px;
   margin: auto;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
+  gap: 15px;
   padding: 15px;
+}
+.header__content-header{
+  display: flex;
+  justify-content: space-between;
 }
 .header__main {
   display: flex;
@@ -81,20 +87,62 @@
 .header__options--option:hover::after{
   left: 0;
 }
+.header__options--option-see{
+  font-weight: bold;
+}
 
+.header__trends,
+.header__categories{
+  display: flex;
+  /* justify-content: center; */
+  gap: 20px;
+  width: 100%;
+  white-space: nowrap;
+}
+.trends__trend{
+  all: unset;
+  cursor: pointer;
+  padding: 5px 15px;
+  border-radius: 100px;
+  background-color: #00c5ff;
+  transition: .5s all;
+}
+.trends__trend:hover{
+  transform: scale(110%, 110%);
+}
+.trends__trend--color-1{
+  background-color: #fff152;
+}
+.trends__trend--color-2{
+  background-color: #8e2eff;
+}
+.trends__trend--color-3{
+  background-color: #00c5ff;
+}
+.trends__trend--color-4{
+  background-color: #FF5B5B;
+}
+.trends__trend--color-5{
+  background-color: #04FF8E;
+}
 /** DISEÑO RESPONSIVO: Tabletas **/
 @media screen and (max-width: 1024px){
-  .header{
+  .header__content-header{
     flex-direction: column;
     gap: 15px;
   }
   .header__main{
-    width: 100%;
     justify-content: space-between;
   }
   .form__search{
-    width: 65vw;
+    width: 60vw;
   }
-
+  .header__options{
+    justify-content: center;
+  }
+  .header__sub-header>.header__categories,
+  .header__sub-header .header__trends{
+    justify-content: center;
+  }
 }
 /** DISEÑO RESPONSIVO: Celular **/

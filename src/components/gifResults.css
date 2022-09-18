@@ -1,5 +1,17 @@
-.main__gif{
-  height: 200px;
-  width: 200px;
+.main{
+  max-width: 1440px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    /* margin-top: 20px; */
+    padding: 15px;
+}
+.main__gif {
+  height: calc(1440px / 5);
+  width: calc(1440px / 5);
   border: none;
+  background-color: white;
+  border-radius: 8px;
 }
