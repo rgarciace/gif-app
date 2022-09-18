@@ -30,7 +30,7 @@
 }
 .form__search {
   all: unset;
-  width: 60vw;
+  width: 50vw;
   font-size: 18px;
   padding: 5px 35px 5px 15px;
   outline: none;
@@ -81,3 +81,20 @@
 .header__options--option:hover::after{
   left: 0;
 }
+
+/** DISEÑO RESPONSIVO: Tabletas **/
+@media screen and (max-width: 1024px){
+  .header{
+    flex-direction: column;
+    gap: 15px;
+  }
+  .header__main{
+    width: 100%;
+    justify-content: space-between;
+  }
+  .form__search{
+    width: 65vw;
+  }
+
+}
+/** DISEÑO RESPONSIVO: Celular **/

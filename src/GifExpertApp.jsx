@@ -6,7 +6,7 @@ import "./giftExpertApp.css";
 
 const url = "https://api.giphy.com/v1/gifs/search";
 const api = "edPUisklOkr7bKicTfrJR1shTmyurGWr";
-const limit = 10;
+const limit = 20;
 
 const GifExpertApp = () => {
   const [valueSearch, setValueSearch] = useState("");
