@@ -1,0 +1,221 @@
+.containerHeader {
+  background-color: white;
+  box-shadow: 0 3px 15px 5px rgba(0, 0, 0, 0.08);
+  position: sticky;
+  top: 0;
+}
+.header {
+  max-width: 1440px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 15px;
+}
+.header__content-header {
+  display: flex;
+  justify-content: space-between;
+}
+.header__main {
+  display: flex;
+  gap: 30px;
+}
+.header__main--logo {
+  width: 150px;
+}
+.header__main--form {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.form__icon {
+  position: absolute;
+  right: 15px;
+  transition: 0.5s all;
+  color: gray;
+}
+.form__search {
+  all: unset;
+  width: min(50vw, calc(1000px));
+  font-size: 15px;
+  padding: 5px 35px 5px 15px;
+  outline: none;
+  border: 2px solid gray;
+  border-image: linear-gradient(var(--angle), gray, gray) 1;
+  display: flex;
+  transition: 0.5s all;
+}
+.form__search:focus {
+  border: 2px solid;
+  border-image: linear-gradient(var(--angle), #00c5ff, #fff152, #8e2eff) 1;
+  animation: 15s rotate linear infinite;
+}
+.form__search:focus + .form__icon {
+  color: black;
+}
+@keyframes rotate {
+  to {
+    --angle: 360deg;
+  }
+}
+/*! Parece error, pero funciona: DEJARLO AHÍ **/
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 90deg;
+  inherits: false;
+}
+.header__options {
+  display: flex;
+  gap: 20px;
+}
+.header__options--option {
+  all: unset;
+  transition: 0.5s all;
+  cursor: pointer;
+  overflow: hidden;
+  font-size: 15px;
+}
+.header__options--option > a {
+  all: unset;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.header__options--option::after {
+  content: "";
+  display: block;
+  margin-top: 5px;
+  position: relative;
+  transition: 0.5s all;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background-color: #8e2eff;
+}
+.header__options--option:hover::after {
+  left: 0;
+}
+.header__options--option-see::after {
+  content: "";
+  display: block;
+  margin-top: 5px;
+  position: relative;
+  transition: 0.5s all;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #8e2eff;
+}
+.option__icon-link {
+  width: 1.1em;
+  transition: 0.5s all;
+}
+.header__options--option:hover .option__icon-link {
+  color: #00c5ff;
+}
+
+.header__sub-header {
+  transition: 0.2s all;
+  animation: showToRight 0.2s linear;
+}
+@keyframes showToRight {
+  from {
+    transform: translateX(-10%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+.header__trends,
+.header__categories {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  white-space: nowrap;
+}
+.trends__trend {
+  all: unset;
+  font-size: 13px;
+  cursor: pointer;
+  padding: 5px 15px;
+  border-radius: 8px;
+  background-color: #00c5ff;
+  transition: 0.2s all;
+}
+.trends__trend:hover {
+  transform: scale(110%, 110%) translateY(-10%);
+}
+.trends__trend--color-1 {
+  background-color: #fff152;
+}
+.trends__trend--color-2 {
+  background-color: #8e2eff;
+}
+.trends__trend--color-3 {
+  background-color: #00c5ff;
+}
+.trends__trend--color-4 {
+  background-color: #ff5b5b;
+}
+.trends__trend--color-5 {
+  background-color: #04ff8e;
+}
+/** DISEÑO RESPONSIVO: Tabletas **/
+@media screen and (max-width: 1024px) {
+  .header__content-header {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .header__main {
+    justify-content: space-between;
+  }
+  .form__search {
+    width: 60vw;
+  }
+  .header__options {
+    justify-content: center;
+  }
+  .header__sub-header > .header__categories,
+  .header__sub-header .header__trends {
+    justify-content: center;
+  }
+}
+/** DISEÑO RESPONSIVO: Celular **/
+@media screen and (max-width: 660px) {
+  .header {
+    padding-bottom: 8px;
+    gap: 8px;
+  }
+  .header__content-header {
+    gap: 8px;
+  }
+  .header__main,
+  .header__options {
+    gap: 10px;
+  }
+  .header__main--logo {
+    width: 100px;
+  }
+  .form__search {
+    width: 45vw;
+    font-size: 13px;
+    padding: 5px 30px 5px 8px;
+  }
+  .form__icon {
+    right: 8px;
+  }
+  .header__options--option {
+    font-size: 13px;
+  }
+  .header__trends {
+    overflow-x: scroll;
+  }
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  .trends__trend:hover {
+    transform: none;
+  }
+}

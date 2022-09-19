@@ -1,6 +1,7 @@
 html, body, *{
   margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+  font-family: 'Montserrat', sans-serif;
   padding: 0;
   box-sizing: border-box;
 }
@@ -42,4 +43,35 @@ footer a{
   width: 80px;
   height: 80px;
   border-radius: 50px;
+}
+
+/* *Scroll Coolbox */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 3px;
+}
+::-webkit-scrollbar-button {
+  width: 0px;
+  height: 0px;
+}
+::-webkit-scrollbar-thumb {
+  background: #4A4A4A;
+  border-radius: 50px;
+}
+::-webkit-scrollbar-thumb:hover,
+::-webkit-scrollbar-thumb:active {
+  background: #A1A1A1;
+}
+::-webkit-scrollbar-track {
+  background: #E3E3E3;
+  border-radius: 50px;
+}
+::-webkit-scrollbar-track:hover {
+  background: #E3E3E3;
+}
+::-webkit-scrollbar-track:active {
+  background: #f0f0f0;
+}
+::-webkit-scrollbar-corner {
+  background: transparent;
 }

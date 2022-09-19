@@ -1,5 +1,6 @@
 import React from 'react';
 import Contact from './Contact';
+import FooterOption from './FooterOption';
 
 const Footer = () => {
   return (
@@ -28,6 +29,9 @@ const Footer = () => {
       <div>
         Todos los derechos reservados <br></br>
         Copyrigth &copy;2022
+      </div>
+      <div>
+        <FooterOption text="Contenido" link="https://www.facebook.com"/>
       </div>
     </footer>
   );
