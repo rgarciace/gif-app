@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import Logo from "../../assets/giphy-logo.svg";
-import { Search } from "iconoir-react";
+import { Search, OpenNewWindow } from "iconoir-react";
 import "./header.css";
 
 const Header = ({ setValueSearch, resultsTrends }) => {
@@ -11,8 +11,7 @@ const Header = ({ setValueSearch, resultsTrends }) => {
   useEffect(() => {
     setInputValue(selectedTrend);
     setValueSearch(selectedTrend);
-  }, [selectedTrend])
-  
+  }, [selectedTrend]);
 
   const onSubmitValue = (e) => {
     e.preventDefault();
@@ -22,8 +21,8 @@ const Header = ({ setValueSearch, resultsTrends }) => {
     setSeeTrends(!seeTrends);
   };
   const searchTrend = (e) => {
-    setSelectedTrend(e.target.innerText)
-  }
+    setSelectedTrend(e.target.innerText);
+  };
   return (
     <div className="containerHeader">
       <header className="header">
@@ -54,7 +53,10 @@ const Header = ({ setValueSearch, resultsTrends }) => {
               Tendencias
             </button>
             <button className="header__options--option">
-              <a href="https://giphy.com/" target="_blank">Ir a Giphy</a>
+              <a href="https://giphy.com/" target="_blank">
+                Ir a Giphy <OpenNewWindow className="option__icon-link" />
+              </a>
+              {/* <OpenNewWindow className="option__icon-link" /> */}
             </button>
           </div>
         </div>
