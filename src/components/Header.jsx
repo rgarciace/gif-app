@@ -5,7 +5,14 @@ import "./header.css";
 
 const Header = ({ setValueSearch, resultsTrends }) => {
   const [inputValue, setInputValue] = useState("");
-  const [seeTrends, setSeeTrends] = useState(true);
+  const [seeTrends, setSeeTrends] = useState(false);
+  const [selectedTrend, setSelectedTrend] = useState("");
+
+  useEffect(() => {
+    setInputValue(selectedTrend);
+    setValueSearch(selectedTrend);
+  }, [selectedTrend])
+  
 
   const onSubmitValue = (e) => {
     e.preventDefault();
@@ -14,6 +21,9 @@ const Header = ({ setValueSearch, resultsTrends }) => {
   const onClickTrends = () => {
     setSeeTrends(!seeTrends);
   };
+  const searchTrend = (e) => {
+    setSelectedTrend(e.target.innerText)
+  }
   return (
     <div className="containerHeader">
       <header className="header">
@@ -22,6 +32,7 @@ const Header = ({ setValueSearch, resultsTrends }) => {
             <img className="header__main--logo" src={Logo} alt="Logotipo" />
             <form className="header__main--form" onSubmit={onSubmitValue}>
               <input
+                id="input-search"
                 className="form__search"
                 type="text"
                 placeholder="Buscar gifs"
@@ -55,6 +66,8 @@ const Header = ({ setValueSearch, resultsTrends }) => {
                   className={`trends__trend trends__trend--color-${
                     Math.floor(Math.random() * 5) + 1
                   }`}
+                  key={trend}
+                  onClick={searchTrend}
                 >
                   {trend}
                 </button>
