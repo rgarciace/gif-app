@@ -36,8 +36,8 @@
 }
 .form__search {
   all: unset;
-  width: 50vw;
-  font-size: 18px;
+  width: min(50vw, calc(1000px));
+  font-size: 15px;
   padding: 5px 35px 5px 15px;
   outline: none;
   border: 2px solid gray;
@@ -72,6 +72,7 @@
   transition: 0.5s all;
   cursor: pointer;
   overflow: hidden;
+  font-size: 15px;
 }
 .header__options--option > a {
   all: unset;
@@ -125,14 +126,15 @@
 }
 .trends__trend {
   all: unset;
+  font-size: 13px;
   cursor: pointer;
   padding: 5px 15px;
-  border-radius: 100px;
+  border-radius: 8px;
   background-color: #00c5ff;
-  transition: 0.5s all;
+  transition: 0.2s all;
 }
 .trends__trend:hover {
-  transform: scale(110%, 110%);
+  transform: scale(110%, 110%) translateY(-10%);
 }
 .trends__trend--color-1 {
   background-color: #fff152;
@@ -170,3 +172,35 @@
   }
 }
 /** DISEÑO RESPONSIVO: Celular **/
+@media screen and (max-width: 660px) {
+  .header{
+    padding-bottom: 8px;
+    gap: 8px;
+  }
+  .header__content-header{
+    gap: 8px;
+  }
+  .header__main,
+  .header__options {
+    gap: 10px;
+  }
+  .header__main--logo {
+    width: 100px;
+  }
+  .form__search {
+    width: 45vw;
+    font-size: 13px;
+  }
+  .header__options--option {
+    font-size: 13px;
+  }
+  .header__trends {
+    overflow-x: scroll;
+  }
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  .trends__trend:hover {
+    transform: none;
+  }
+}

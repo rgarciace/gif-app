@@ -54,7 +54,7 @@ const Header = ({ setValueSearch, resultsTrends }) => {
               Tendencias
             </button>
             <button className="header__options--option">
-              <a href="https://giphy.com/">Ir a Giphy</a>
+              <a href="https://giphy.com/" target="_blank">Ir a Giphy</a>
             </button>
           </div>
         </div>
