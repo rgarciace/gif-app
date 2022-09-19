@@ -3,22 +3,16 @@ import Logo from "../../assets/giphy-logo.svg";
 import { Search } from "iconoir-react";
 import "./header.css";
 
-const Header = ({ setValueSearch }) => {
+const Header = ({ setValueSearch, resultsTrends }) => {
   const [inputValue, setInputValue] = useState("");
   const [seeTrends, setSeeTrends] = useState(true);
-  const [seeCategories, setSeeCategories] = useState(false);
 
   const onSubmitValue = (e) => {
     e.preventDefault();
     setValueSearch(inputValue);
   };
   const onClickTrends = () => {
-    setSeeCategories(false);
-    setSeeTrends(true);
-  };
-  const onClickCategories = () => {
-    setSeeTrends(false);
-    setSeeCategories(true);
+    setSeeTrends(!seeTrends);
   };
   return (
     <div className="containerHeader">
@@ -41,65 +35,33 @@ const Header = ({ setValueSearch }) => {
             <button
               className={
                 seeTrends
-                  ? "header__options--option header__options--option-see"
+                  ? "header__options--option-see header__options--option"
                   : "header__options--option"
               }
               onClick={onClickTrends}
             >
               Tendencias
             </button>
-            <button
-              className={
-                seeCategories
-                  ? "header__options--option header__options--option-see"
-                  : "header__options--option"
-              }
-              onClick={onClickCategories}
-            >
-              Categorías
+            <button className="header__options--option">
+              <a href="https://giphy.com/">Ir a Giphy</a>
             </button>
           </div>
         </div>
-        <div className="header__sub-header">
-          {seeTrends && (
+        {seeTrends && (
+          <div className="header__sub-header">
             <div className="header__trends">
-              <button className={`trends__trend trends__trend--color-${Math.floor(Math.random() * 5) + 1}`}>
-                Hello world
-              </button>
-              <button className={`trends__trend trends__trend--color-${Math.floor(Math.random() * 5) + 1}`}>
-                Hello world
-              </button>
-              <button className={`trends__trend trends__trend--color-${Math.floor(Math.random() * 5) + 1}`}>
-                Hello world
-              </button>
-              <button className={`trends__trend trends__trend--color-${Math.floor(Math.random() * 5) + 1}`}>
-                Hello world
-              </button>
-              <button className={`trends__trend trends__trend--color-${Math.floor(Math.random() * 5) + 1}`}>
-                Hello world
-              </button>
+              {resultsTrends.map((trend) => (
+                <button
+                  className={`trends__trend trends__trend--color-${
+                    Math.floor(Math.random() * 5) + 1
+                  }`}
+                >
+                  {trend}
+                </button>
+              ))}
             </div>
-          )}
-          {seeCategories && (
-            <div className="header__categories">
-              <button className={`trends__trend trends__trend--color-${Math.floor(Math.random() * 5) + 1}`}>
-                Hola mundo
-              </button>
-              <button className={`trends__trend trends__trend--color-${Math.floor(Math.random() * 5) + 1}`}>
-                Hola mundo
-              </button>
-              <button className={`trends__trend trends__trend--color-${Math.floor(Math.random() * 5) + 1}`}>
-                Hola mundo
-              </button>
-              <button className={`trends__trend trends__trend--color-${Math.floor(Math.random() * 5) + 1}`}>
-                Hola mundo
-              </button>
-              <button className={`trends__trend trends__trend--color-${Math.floor(Math.random() * 5) + 1}`}>
-                Hola mundo
-              </button>
-            </div>
-          )}
-        </div>
+          </div>
+        )}
       </header>
     </div>
   );

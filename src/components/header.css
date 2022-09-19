@@ -12,7 +12,7 @@
   gap: 15px;
   padding: 15px;
 }
-.header__content-header{
+.header__content-header {
   display: flex;
   justify-content: space-between;
 }
@@ -73,8 +73,11 @@
   cursor: pointer;
   overflow: hidden;
 }
+.header__options--option > a {
+  all: unset;
+}
 .header__options--option::after {
-  content: '';
+  content: "";
   display: block;
   margin-top: 5px;
   position: relative;
@@ -84,64 +87,85 @@
   height: 2px;
   background-color: #8e2eff;
 }
-.header__options--option:hover::after{
+.header__options--option:hover::after {
   left: 0;
 }
-.header__options--option-see{
-  font-weight: bold;
+.header__options--option-see::after {
+  content: "";
+  display: block;
+  margin-top: 5px;
+  position: relative;
+  transition: 0.5s all;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #8e2eff;
 }
 
+.header__sub-header {
+  transition: 0.2s all;
+  animation: showToRight 0.2s linear;
+}
+@keyframes showToRight {
+  from {
+    transform: translateX(-10%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
 .header__trends,
-.header__categories{
+.header__categories {
   display: flex;
-  /* justify-content: center; */
   gap: 20px;
   width: 100%;
   white-space: nowrap;
 }
-.trends__trend{
+.trends__trend {
   all: unset;
   cursor: pointer;
   padding: 5px 15px;
   border-radius: 100px;
   background-color: #00c5ff;
-  transition: .5s all;
+  transition: 0.5s all;
 }
-.trends__trend:hover{
+.trends__trend:hover {
   transform: scale(110%, 110%);
 }
-.trends__trend--color-1{
+.trends__trend--color-1 {
   background-color: #fff152;
 }
-.trends__trend--color-2{
+.trends__trend--color-2 {
   background-color: #8e2eff;
 }
-.trends__trend--color-3{
+.trends__trend--color-3 {
   background-color: #00c5ff;
 }
-.trends__trend--color-4{
-  background-color: #FF5B5B;
+.trends__trend--color-4 {
+  background-color: #ff5b5b;
 }
-.trends__trend--color-5{
-  background-color: #04FF8E;
+.trends__trend--color-5 {
+  background-color: #04ff8e;
 }
 /** DISEÑO RESPONSIVO: Tabletas **/
-@media screen and (max-width: 1024px){
-  .header__content-header{
+@media screen and (max-width: 1024px) {
+  .header__content-header {
     flex-direction: column;
     gap: 15px;
   }
-  .header__main{
+  .header__main {
     justify-content: space-between;
   }
-  .form__search{
+  .form__search {
     width: 60vw;
   }
-  .header__options{
+  .header__options {
     justify-content: center;
   }
-  .header__sub-header>.header__categories,
-  .header__sub-header .header__trends{
+  .header__sub-header > .header__categories,
+  .header__sub-header .header__trends {
     justify-content: center;
   }
 }
