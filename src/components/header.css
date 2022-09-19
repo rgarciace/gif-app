@@ -58,6 +58,7 @@
     --angle: 360deg;
   }
 }
+/*! Parece error, pero funciona: DEJARLO AHÍ **/
 @property --angle {
   syntax: "<angle>";
   initial-value: 90deg;
@@ -105,12 +106,11 @@
   height: 2px;
   background-color: #8e2eff;
 }
-.option__icon-link{
-  /* color: gray; */
+.option__icon-link {
   width: 1.1em;
-  transition: .5s all;
+  transition: 0.5s all;
 }
-.header__options--option:hover .option__icon-link{
+.header__options--option:hover .option__icon-link {
   color: #00c5ff;
 }
 
@@ -201,6 +201,10 @@
   .form__search {
     width: 45vw;
     font-size: 13px;
+    padding: 5px 30px 5px 8px;
+  }
+  .form__icon {
+    right: 8px;
   }
   .header__options--option {
     font-size: 13px;

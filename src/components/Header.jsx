@@ -34,7 +34,7 @@ const Header = ({ setValueSearch, resultsTrends }) => {
                 id="input-search"
                 className="form__search"
                 type="text"
-                placeholder="Buscar gifs"
+                placeholder="Buscar películas, famosos, personajes, ... "
                 onChange={(e) => setInputValue(e.target.value)}
                 autoComplete="off"
               />
@@ -56,7 +56,6 @@ const Header = ({ setValueSearch, resultsTrends }) => {
               <a href="https://giphy.com/" target="_blank">
                 Ir a Giphy <OpenNewWindow className="option__icon-link" />
               </a>
-              {/* <OpenNewWindow className="option__icon-link" /> */}
             </button>
           </div>
         </div>
