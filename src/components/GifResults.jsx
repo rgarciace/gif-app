@@ -15,7 +15,7 @@ const GifResults = ({ results, loading }) => {
     <main className="main">
       {loading ? (
         <>
-          <div className="contain-loader">
+          <div className="main__loader">
             <Lottie
               className="loader"
               animationData={loader}
