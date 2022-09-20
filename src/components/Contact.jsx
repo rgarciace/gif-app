@@ -1,10 +1,10 @@
-import React from 'react'
-
+import React from "react";
+import "./footer.css";
 import { FaFacebook, FaGithub } from "react-icons/fa";
 
-const Contact = ({ name, fb, git}) => {
+const Contact = ({ name, fb, git }) => {
   return (
-    <div class="contact-footer">
+    <div className="contact-footer">
       {name}
       <ul>
         <li>
@@ -20,6 +20,6 @@ const Contact = ({ name, fb, git}) => {
       </ul>
     </div>
   );
-}
+};
 
-export default Contact
+export default Contact;

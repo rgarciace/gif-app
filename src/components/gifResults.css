@@ -1,12 +1,12 @@
-.main{
+.main {
   max-width: 1440px;
-    margin: auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-    /* margin-top: 20px; */
-    padding: 15px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  /* margin-top: 20px; */
+  padding: 15px;
 }
 .main__gif {
   height: calc(1440px / 5);
@@ -14,4 +14,16 @@
   border: none;
   background-color: white;
   border-radius: 8px;
+}
+.loader {
+  width: 90px;
+  height: 90px;
+  justify-content: center;
+  align-items: center;
+}
+.contain-loader {
+  width: 100vh;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
 }
